@@ -1,6 +1,6 @@
 {
     "name": "map-proxy",
-    "version": "1.0.0-RC1",
+    "version": "1.0.0",
     "description": "A server that acts as a basic proxy between client-centric applications.",
     "main": "index.js",
     "dependencies": {
