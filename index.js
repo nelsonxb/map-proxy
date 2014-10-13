@@ -77,10 +77,13 @@ Client.prototype.disconnect = function (reason) {
     this.send(reason);
     this.socket.end();
 
+    this.dispose(reason);
+};
+Client.prototype.dispose = function (reason) {
     reason.cmd = 'peer left';
     reason.id = this.id;
     printData(reason);
-
+    
     delete clients[this.id];
     _.each(clients, function (client) {
         client.send(reason);
@@ -195,6 +198,11 @@ var server = net.createServer(function (socket) {
                     console.log(e.stack);
                 }
             }
+        });
+        
+        // If connection spontaneously disappears (you should prefer to send `quit`)
+        socket.on('disconnect', function () {
+            client.dispose({why: 'disconnect'});
         });
     });
 });
