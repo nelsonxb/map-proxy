@@ -1,29 +1,30 @@
 {
-    "name": "map-proxy",
-    "version": "1.0.1",
-    "description": "A server that acts as a basic proxy between client-centric applications.",
-    "main": "index.js",
-    "dependencies": {
-        "js-yaml": "^3.2.2",
-        "underscore": "^1.7.0",
-        "underscore.string": "^2.3.3",
-        "uuid": "^2.0.1"
-    },
-    "author": "Nelson Crosby <nc@sourcecomb.com>",
-    "license": "MIT",
-    "bin": {
-        "map-proxy": "index.js"
-    },
-    "devDependencies": {},
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/NelsonCrosby/map-proxy.git"
-    },
-    "bugs": {
-        "url": "https://github.com/NelsonCrosby/map-proxy/issues"
-    },
-    "homepage": "https://github.com/NelsonCrosby/map-proxy"
+  "name": "map-proxy",
+  "version": "1.0.2",
+  "description": "A server that acts as a basic proxy between client-centric applications.",
+  "main": "index.js",
+  "dependencies": {
+    "cli-argparse": "^0.4.3",
+    "js-yaml": "^3.2.2",
+    "underscore": "^1.7.0",
+    "underscore.string": "^2.3.3",
+    "uuid": "^2.0.1"
+  },
+  "author": "Nelson Crosby <nc@sourcecomb.com>",
+  "license": "MIT",
+  "bin": {
+    "map-proxy": "index.js"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NelsonCrosby/map-proxy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NelsonCrosby/map-proxy/issues"
+  },
+  "homepage": "https://github.com/NelsonCrosby/map-proxy"
 }

@@ -10,8 +10,9 @@ A server that acts as a proxy to allow easy communication between clients.
         $ npm install -g map-proxy
 - Run
         $ map-proxy
-- (Optional) Change port:
-    - Change the `var PORT = ...` statement.
+    - Run on an alternate port
+            $ map-proxy --port 2345
+            $ map-proxy 2345
 
 
 ## Writing clients ##

@@ -8,8 +8,16 @@ var _ = require('underscore'),
     events = require('events'),
     net = require('net'),
     uuid = require('uuid'),
-    yaml = require('js-yaml');
+    yaml = require('js-yaml'),
+    argparse = require('cli-argparse');
 _.mixin(require('underscore.string').exports());
+
+var args = argparse();
+if (args.options.port) {
+    PORT = parseInt(args.options.port, 10);
+} else if (args.unparsed.length > 0) {
+    PORT = parseInt(args.unparsed.shift(), 10);
+}
 
 var clients = {};
 // Support for different transport types
