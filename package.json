@@ -12,6 +12,18 @@
     "author": "Nelson Crosby <nc@sourcecomb.com>",
     "license": "MIT",
     "bin": {
-        "object-proxy": "index.js"
-    }
+        "map-proxy": "index.js"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/NelsonCrosby/map-proxy.git"
+    },
+    "bugs": {
+        "url": "https://github.com/NelsonCrosby/map-proxy/issues"
+    },
+    "homepage": "https://github.com/NelsonCrosby/map-proxy"
 }

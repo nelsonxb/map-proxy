@@ -6,7 +6,8 @@ A server that acts as a proxy to allow easy communication between clients.
 ## Running ##
 
 - Install [node.js](http://nodejs.org/)
-- Download latest Map Proxy release and extract all files
+- Download latest map-proxy
+        $ npm install -g map-proxy
 - Open a terminal and change to extracted directory
 - Install dependencies
         $ npm install
