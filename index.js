@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /*jslint devel: true, node: true, passfail: false, nomen: true, vars: true, indent: 4, maxlen: 120 */
 "use strict";
 
@@ -75,11 +76,11 @@ Client.prototype.disconnect = function (reason) {
     reason.cmd = 'end';
     this.send(reason);
     this.socket.end();
-    
+
     reason.cmd = 'peer left';
     reason.id = this.id;
     printData(reason);
-    
+
     delete clients[this.id];
     _.each(clients, function (client) {
         client.send(reason);
@@ -89,11 +90,11 @@ Client.prototype.disconnect = function (reason) {
 
 var server = net.createServer(function (socket) {
     socket.setEncoding('utf8');
-    
+
     // Get information on data type
     socket.once('data', function (recv) {
         var dataType, client;
-        
+
         try {
             dataType = recv.trim();
             client = new Client(dataType, socket);
@@ -103,12 +104,12 @@ var server = net.createServer(function (socket) {
                 return;
             } else { throw e; }
         }
-        
+
         clients[client.id] = client;
-        
+
         // Welcome the client to this world
         client.send({cmd: 'welcome', id: client.id});
-        
+
         // Notify all other clients that someone has connected
         var connectData = {cmd: 'peer connected', id: client.id};
         printData(connectData);
@@ -117,7 +118,7 @@ var server = net.createServer(function (socket) {
                 sendTo.send(connectData);
             }
         });
-        
+
         // Actual data handler
         socket.on('data', function (recv) {
             // Ensure the data is operable
