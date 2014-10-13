@@ -8,11 +8,8 @@ A server that acts as a proxy to allow easy communication between clients.
 - Install [node.js](http://nodejs.org/)
 - Download latest map-proxy
         $ npm install -g map-proxy
-- Open a terminal and change to extracted directory
-- Install dependencies
-        $ npm install
 - Run
-        $ node index
+        $ map-proxy
 - (Optional) Change port:
     - Change the `var PORT = ...` statement.
 
