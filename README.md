@@ -117,3 +117,44 @@ Explained:
 - We send a `quit` to tell the server we are done, and to clean everything up
     nicely.
 - The server sends an `end` and closes the pipe.
+
+
+If you want, the same session in JSON:
+
+    < json
+    > { "cmd": "welcome",
+        "id":"35dac294-e36e-4efb-a74c-88b864ef6387" }
+    < { "cmd": "list peers" }
+    > { "cmd": "RES:list peers",
+        "peers": [
+            "e7b25b29-62ed-4bca-821b-8066765c32de",
+            "65537abc-0b17-4e03-88cc-29945b65c6ce",
+            "0f0c71b5-ee3b-4b48-971c-da6e580382d9"
+        ] }
+    > { "cmd": "peer connected",
+        "id": "6666762c-00ac-495e-a83f-96d1437449ff" }
+    < { "cmd": "deny",
+        "id": "6666762c-00ac-495e-a83f-96d1437449ff" }
+    > { "cmd": "RES:deny",
+        "success": true,
+        "denied": 2 }
+    < { "cmd": "deny",
+        "id": "6666762c-00ac-495e-a83f-96d1437449ff" }
+    > { "cmd": "ERROR"
+        "type": "redundant",
+        "info": "already denied",
+        "message": "You have already denied the connection of 6666762c-00ac-495e-a83f-96d1437449ff" }
+    > { "cmd": "peer left",
+        "id": "6666762c-00ac-495e-a83f-96d1437449ff",
+        "why": "denied",
+        "by": [
+            "e7b25b29-62ed-4bca-821b-8066765c32de",
+            "35dac294-e36e-4efb-a74c-88b864ef6387",
+            "65537abc-0b17-4e03-88cc-29945b65c6ce"
+        ] }
+    > { "cmd": "peer left",
+        "id": "0f0c71b5-ee3b-4b48-971c-da6e580382d9",
+        "why": "client request" }
+    < { "cmd": "quit" }
+    > { "cmd": "end",
+        "why": "client request" }
