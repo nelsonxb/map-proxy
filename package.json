@@ -1,0 +1,14 @@
+{
+  "name": "object-proxy",
+  "version": "1.0.0-RC1",
+  "description": "A server that acts as a basic proxy between client-centric applications.",
+  "main": "index.js",
+  "dependencies": {
+    "js-yaml": "^3.2.2",
+    "underscore": "^1.7.0",
+    "underscore.string": "^2.3.3",
+    "uuid": "^2.0.1"
+  },
+  "author": "Nelson Crosby <nc@sourcecomb.com>",
+  "license": "MIT"
+}
